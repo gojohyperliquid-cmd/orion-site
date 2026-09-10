@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ORION — Live Rewards</title>
+<meta name="description" content="Live ORION holder rewards, market cap and holders. Powered by Signal Family.">
+<style>
+:root{--bg:#02030a;--panel:rgba(8,12,27,.72);--line:rgba(135,190,255,.18);--text:#f3f6ff;--muted:#8d9ab9;--cyan:#62e7ff;--violet:#9a7cff;--gold:#ffd56a}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 8%,rgba(61,79,170,.23),transparent 34%),radial-gradient(circle at 85% 70%,rgba(106,43,255,.13),transparent 30%),linear-gradient(180deg,#02030a 0%,#050817 48%,#02030a 100%)}
+.starfield{position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 1px,transparent 1.2px),radial-gradient(circle,rgba(98,231,255,.35) 0 1px,transparent 1.2px);background-size:127px 127px,211px 211px;background-position:13px 27px,61px 83px}
+header{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:24px clamp(20px,5vw,72px);border-bottom:1px solid rgba(135,190,255,.1)}
+.brand{font-size:15px;letter-spacing:.45em;font-weight:800}.back{color:#aeb9d4;text-decoration:none;font-size:9px;letter-spacing:.24em;text-transform:uppercase}.back:hover{color:white}
+main{position:relative;z-index:1;width:min(1120px,calc(100% - 40px));margin:0 auto;padding:clamp(58px,9vw,110px) 0 90px}
+.kicker{color:var(--cyan);font-size:10px;letter-spacing:.35em;text-transform:uppercase}.title{font-size:clamp(48px,8vw,96px);line-height:.9;letter-spacing:-.055em;margin:18px 0 18px}.title em{font-style:normal;color:var(--cyan);text-shadow:0 0 35px rgba(98,231,255,.2)}.intro{max-width:620px;color:#aeb9d4;font-size:15px;line-height:1.65;margin-bottom:52px}.live{display:inline-flex;align-items:center;gap:8px;color:#9ef5b9;font-size:9px;letter-spacing:.2em;text-transform:uppercase}.live i{width:6px;height:6px;background:#65f2a0;border-radius:50%;box-shadow:0 0 12px #65f2a0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{position:relative;min-height:170px;padding:26px;border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 20px 60px rgba(0,0,0,.2)}.card:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(98,231,255,.045),transparent 45%)}.label{position:relative;z-index:1;color:var(--muted);font-size:9px;letter-spacing:.24em;text-transform:uppercase}.value{position:relative;z-index:1;margin-top:28px;font-size:clamp(34px,5vw,58px);font-weight:750;letter-spacing:-.04em}.sub{position:relative;z-index:1;margin-top:8px;color:#7785a5;font-size:11px}.reward-card{grid-column:span 3;min-height:240px;background:linear-gradient(135deg,rgba(23,19,49,.8),rgba(5,15,29,.72))}.reward-row{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-top:20px}.reward-main{font-size:clamp(54px,9vw,100px);font-weight:800;letter-spacing:-.06em;color:var(--gold);text-shadow:0 0 35px rgba(255,213,106,.14)}.usd{font-size:clamp(28px,4vw,48px);font-weight:700;color:#fff;margin-bottom:10px}.reward-meta{color:#8d9ab9;font-size:11px;line-height:1.6;max-width:300px}.refresh{margin-top:36px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(135,190,255,.12);padding-top:15px;color:#667492;font-size:9px;letter-spacing:.12em;text-transform:uppercase}.error{color:#ff9d9d}.skeleton{opacity:.35;animation:blink 1.2s infinite}@keyframes blink{50%{opacity:.12}}
+.actions{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 17px;border:1px solid rgba(98,231,255,.3);color:#eaf7ff;text-decoration:none;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(6,10,24,.65)}.btn:hover{border-color:var(--cyan);transform:translateY(-1px)}footer{position:relative;z-index:1;padding:25px 20px 45px;text-align:center;color:#52607d;font-size:8px;letter-spacing:.16em;text-transform:uppercase}
+@media(max-width:720px){header{padding:20px}.grid{grid-template-columns:1fr}.reward-card{grid-column:span 1}.reward-row{display:block}.reward-main{margin-bottom:10px}.intro{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+<header><div class="brand">ORION</div><a class="back" href="index.html">← Back to constellation</a></header>
+<main>
+  <div class="kicker">Live on Signal Family · HyperEVM</div>
+  <h1 class="title">LIVE <em>REWARDS.</em></h1>
+  <p class="intro">Real-time ORION holder data, read from Signal Family. The reward figure is the amount the token page reports as actually paid to holders — not an estimate of what is owed.</p>
+  <div class="live"><i></i> Live data</div>
+  <section class="grid" aria-live="polite">
+    <article class="card"><div class="label">Holders</div><div id="holders" class="value skeleton">—</div><div class="sub">ORION token holders</div></article>
+    <article class="card"><div class="label">Market Cap</div><div id="mcap" class="value skeleton">—</div><div class="sub">Current market capitalization</div></article>
+    <article class="card"><div class="label">Pair</div><div class="value">HYPE</div><div class="sub">Holder rewards paid in HYPE</div></article>
+    <article class="card reward-card"><div class="label">Holder Rewards Fees Paid</div><div class="reward-row"><div><div id="rewardHype" class="reward-main skeleton">— HYPE</div><div class="reward-meta">Total HYPE actually paid to ORION holders according to Signal Family receipts.</div></div><div><div id="rewardUsd" class="usd skeleton">≈ $—</div><div class="reward-meta">USD equivalent at the current HYPE price.</div></div></div><div class="refresh"><span id="status">Reading Signal Family…</span><span id="updated">—</span></div></article>
+  </section>
+  <div class="actions"><a class="btn" href="https://signal.family/t/0x3bfe8d90300cdceec661144ee6415e88c6f43517" target="_blank" rel="noopener">Open ORION on Signal Family ↗</a><a class="btn" href="index.html">Back to ORION ↗</a></div>
+</main>
+<footer>ORION · THE ELECTRIC TIGER OF HYPEREVM · HUNT · BUILD · BELONG</footer>
+<script>
+const TOKEN='0x3bfe8d90300cdceec661144ee6415e88c6f43517';
+const API=`https://signal.family/api/token/${TOKEN}`;
+const $=id=>document.getElementById(id);
+function pick(o,paths){for(const path of paths){let v=o;for(const k of path.split('.')){if(v==null)break;v=v[k]}if(v!==undefined&&v!==null&&v!=='')return v}return null}
+function deepFind(o, keys){if(!o||typeof o!=='object')return null;const wanted=keys.map(x=>x.toLowerCase());for(const [k,v] of Object.entries(o)){if(wanted.includes(k.toLowerCase())&&v!==null&&v!==undefined)return v}for(const v of Object.values(o)){if(v&&typeof v==='object'){const r=deepFind(v,keys);if(r!==null)return r}}return null}
+function num(v){if(typeof v==='number')return v;if(typeof v==='string'){const n=Number(v.replace(/[$,]/g,''));return Number.isFinite(n)?n:null}return null}
+function fmtNum(v){return v==null?'—':new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(v)}
+function fmtMoney(v){if(v==null)return '—';if(v>=1e9)return '$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return '$'+(v/1e6).toFixed(2)+'M';if(v>=1e3)return '$'+(v/1e3).toFixed(1)+'K';return '$'+v.toFixed(2)}
+function fmtHype(v){if(v==null)return '— HYPE';return (v>=1000?v.toLocaleString('en-US',{maximumFractionDigits:2}):v.toLocaleString('en-US',{maximumFractionDigits:6}))+' HYPE'}
+async function hypeUsd(){
+  const urls=[
+    'https://api.hyperliquid.xyz/info'
+  ];
+  try{const r=await fetch(urls[0],{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({type:'allMids'})});const j=await r.json();const v=num(j?.HYPE||j?.hype);if(v)return v}catch(e){}
+  return null;
+}
+async function load(){
+  $('status').textContent='Updating live data…';
+  try{
+    const r=await fetch(API,{cache:'no-store'}); if(!r.ok)throw new Error('Signal Family API '+r.status); const data=await r.json();
+    const holders=num(pick(data,['holders','holderCount','holdersCount','stats.holders','metrics.holders'])) ?? num(deepFind(data,['holders','holderCount','holdersCount']));
+    const mcap=num(pick(data,['mcap','marketCap','market_cap','stats.mcap','stats.marketCap','metrics.mcap'])) ?? num(deepFind(data,['mcap','marketCap','market_cap']));
+    let reward=num(pick(data,['holderRewardsPaid','holder_rewards_paid','holderRewardFeesPaid','holder_reward_fees_paid','rewards.paid','rewards.paidHype','rewards.holdersPaid','holderRewards.paid'])) ?? num(deepFind(data,['holderRewardsPaid','holder_rewards_paid','holderRewardFeesPaid','holder_reward_fees_paid']));
+    let hypePrice=num(pick(data,['hypeUsd','hypePriceUsd','hype_usd','hype_price_usd','pairPriceUsd','quotePriceUsd'])) ?? num(deepFind(data,['hypeUsd','hypePriceUsd','hype_usd']));
+    if(hypePrice==null)hypePrice=await hypeUsd();
+    $('holders').textContent=fmtNum(holders); $('mcap').textContent=fmtMoney(mcap); $('rewardHype').textContent=fmtHype(reward); $('rewardUsd').textContent=reward!=null&&hypePrice!=null?'≈ '+fmtMoney(reward*hypePrice):'≈ $—';
+    document.querySelectorAll('.skeleton').forEach(el=>el.classList.remove('skeleton'));
+    $('status').textContent='Live · Signal Family API'; $('updated').textContent='Updated '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  }catch(e){$('status').textContent='Unable to read live data right now';$('status').classList.add('error');$('updated').textContent='Retrying…'}
+}
+load();setInterval(load,30000);
+</script>
+</body>
+</html>
